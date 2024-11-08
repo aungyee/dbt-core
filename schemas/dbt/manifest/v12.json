@@ -13,7 +13,7 @@
         },
         "dbt_version": {
           "type": "string",
-          "default": "1.9.0b2"
+          "default": "1.9.0b4"
         },
         "generated_at": {
           "type": "string"
@@ -19969,6 +19969,19 @@
                           "name"
                         ]
                       }
+                    },
+                    "tags": {
+                      "anyOf": [
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
                     }
                   },
                   "additionalProperties": false,
@@ -21524,6 +21537,19 @@
                 "name"
               ]
             }
+          },
+          "tags": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "type": "string"
+              }
+            ]
           }
         },
         "additionalProperties": false,

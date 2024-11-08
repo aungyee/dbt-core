@@ -1603,6 +1603,9 @@ class SavedQuery(NodeInfoMixin, GraphNode, SavedQueryResource):
 
         return True
 
+    def same_tags(self, old: "SavedQuery") -> bool:
+        return self.tags == old.tags
+
     def same_contents(self, old: Optional["SavedQuery"]) -> bool:
         # existing when it didn't before is a change!
         # metadata/tags changes are not "changes"
@@ -1618,6 +1621,7 @@ class SavedQuery(NodeInfoMixin, GraphNode, SavedQueryResource):
             and self.same_config(old)
             and self.same_group(old)
             and self.same_exports(old)
+            and self.same_tags(old)
             and True
         )
 
